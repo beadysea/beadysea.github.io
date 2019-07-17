@@ -1,0 +1,27 @@
+Windows
+=======
+
+Main Interface
+~~~~~~~~~~~~~~
+Not sure which functions to expose in docs. Starting with the ones from examples.
+
+.. module:: bluetooth.msbt
+
+---------
+
+Classes
+~~~~~~~
+There are two 
+
+.. autoclass:: DeviceDiscoverer
+
+
+.. autoclass:: BluetoothSocket
+
+   .. automethod:: accept
+
+   .. automethod:: bind
+
+   .. automethod:: connect
+
+   .. automethod:: listen

@@ -1,0 +1,21 @@
+.. _api:
+
+Developer Interface
+===================
+
+This section of the documentation covers all the interfaces of PyBluez. For most 
+applications undertanding use of the PyBluez common library is sufficient. 
+For applications where operating system dependent functionality is required please
+see the operating system specific pages.
+
+.. toctree::
+	:maxdepth: 2
+
+	api_common
+	api_linux
+	api_mac
+	api_win
+	
+
+
+
