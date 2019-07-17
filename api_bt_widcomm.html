@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Windows &mdash; PyBluez master documentation</title>
+  <title>Windows widcomm stack &mdash; PyBluez master documentation</title>
   
 
   
@@ -35,7 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Mac OS" href="api_mac.html" /> 
+    <link rel="next" title="Helper Functions and Exceptions" href="api_com.html" />
+    <link rel="prev" title="Windows" href="api_bt_ms.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,13 +85,16 @@
 <li class="toctree-l1"><a class="reference internal" href="user/install.html">Installing PyBluez</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="api.html">Developer Interface</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="api_common.html">PyBluez common interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_linux.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_mac.html">Mac OS</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Windows</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#main-interface">Main Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">Application programming interface</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#package-bluetooth">Package: bluetooth</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="api.html#modules">Modules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api_bt_bluez.html">GNU/Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_bt_macos.html">Mac OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_bt_ms.html">Windows</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Windows widcomm stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_com.html">Helper Functions and Exceptions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -140,15 +144,17 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-          <li><a href="api.html">Developer Interface</a> &raquo;</li>
+          <li><a href="api.html">Application programming interface</a> &raquo;</li>
         
-      <li>Windows</li>
+      <li>Windows widcomm stack</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/api_win.rst.txt" rel="nofollow"> View page source</a>
+            
+              <a href="https://github.com/pybluez/pybluez/blob/master/docs/api_bt_widcomm.rst" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
@@ -161,47 +167,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="windows">
-<h1>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="main-interface">
-<h2>Main Interface<a class="headerlink" href="#main-interface" title="Permalink to this headline">¶</a></h2>
-<p>Not sure which functions to expose in docs. Starting with the ones from examples.</p>
-<span class="target" id="module-bluetooth.msbt"></span></div>
-<hr class="docutils" />
-<div class="section" id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
-<p>There are two</p>
-<dl class="class">
-<dt id="bluetooth.msbt.DeviceDiscoverer">
-<em class="property">class </em><code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">DeviceDiscoverer</code><a class="headerlink" href="#bluetooth.msbt.DeviceDiscoverer" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="class">
-<dt id="bluetooth.msbt.BluetoothSocket">
-<em class="property">class </em><code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">BluetoothSocket</code><span class="sig-paren">(</span><em class="sig-param">proto=bluetooth._bluetooth.RFCOMM</em>, <em class="sig-param">sockfd=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.BluetoothSocket" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
-<dt id="bluetooth.msbt.BluetoothSocket.accept">
-<code class="sig-name descname">accept</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.BluetoothSocket.accept" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="bluetooth.msbt.BluetoothSocket.bind">
-<code class="sig-name descname">bind</code><span class="sig-paren">(</span><em class="sig-param">addrport</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.BluetoothSocket.bind" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="bluetooth.msbt.BluetoothSocket.connect">
-<code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param">addrport</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.BluetoothSocket.connect" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="bluetooth.msbt.BluetoothSocket.listen">
-<code class="sig-name descname">listen</code><span class="sig-paren">(</span><em class="sig-param">backlog</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.BluetoothSocket.listen" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
+  <div class="section" id="windows-widcomm-stack">
+<h1>Windows widcomm stack<a class="headerlink" href="#windows-widcomm-stack" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -212,8 +179,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="api_com.html" class="btn btn-neutral float-right" title="Helper Functions and Exceptions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="api_mac.html" class="btn btn-neutral float-left" title="Mac OS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="api_bt_ms.html" class="btn btn-neutral float-left" title="Windows" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

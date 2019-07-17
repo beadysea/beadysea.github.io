@@ -1,0 +1,270 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Windows &mdash; PyBluez master documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Windows widcomm stack" href="api_bt_widcomm.html" />
+    <link rel="prev" title="Mac OS" href="api_bt_macos.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PyBluez
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="user/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user/install.html">Installing PyBluez</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">Application programming interface</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#package-bluetooth">Package: bluetooth</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="api.html#modules">Modules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="api_bt_bluez.html">GNU/Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_bt_macos.html">Mac OS</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_bt_widcomm.html">Windows widcomm stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_com.html">Helper Functions and Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyBluez</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="api.html">Application programming interface</a> &raquo;</li>
+        
+      <li>Windows</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/pybluez/pybluez/blob/master/docs/api_bt_ms.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-bluetooth.msbt">
+<span id="windows"></span><h1>Windows<a class="headerlink" href="#module-bluetooth.msbt" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<p>There are two</p>
+<dl class="class">
+<dt id="bluetooth.msbt.DeviceDiscoverer">
+<em class="property">class </em><code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">DeviceDiscoverer</code><a class="headerlink" href="#bluetooth.msbt.DeviceDiscoverer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="bluetooth.msbt.BluetoothSocket">
+<em class="property">class </em><code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">BluetoothSocket</code><span class="sig-paren">(</span><em class="sig-param">proto=bluetooth._bluetooth.RFCOMM</em>, <em class="sig-param">sockfd=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.BluetoothSocket" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="bluetooth.msbt.advertise_service">
+<code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">advertise_service</code><span class="sig-paren">(</span><em class="sig-param">sock</em>, <em class="sig-param">name</em>, <em class="sig-param">service_id=''</em>, <em class="sig-param">service_classes=[]</em>, <em class="sig-param">profiles=[]</em>, <em class="sig-param">provider=''</em>, <em class="sig-param">description=''</em>, <em class="sig-param">protocols=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.advertise_service" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bluetooth.msbt.discover_devices">
+<code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">discover_devices</code><span class="sig-paren">(</span><em class="sig-param">duration=8</em>, <em class="sig-param">flush_cache=True</em>, <em class="sig-param">lookup_names=False</em>, <em class="sig-param">lookup_class=False</em>, <em class="sig-param">device_id=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.discover_devices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bluetooth.msbt.find_service">
+<code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">find_service</code><span class="sig-paren">(</span><em class="sig-param">name=None</em>, <em class="sig-param">uuid=None</em>, <em class="sig-param">address=None</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.find_service" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bluetooth.msbt.lookup_name">
+<code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">lookup_name</code><span class="sig-paren">(</span><em class="sig-param">address</em>, <em class="sig-param">timeout=10</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.lookup_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bluetooth.msbt.read_local_bdaddr">
+<code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">read_local_bdaddr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.read_local_bdaddr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="bluetooth.msbt.stop_advertising">
+<code class="sig-prename descclassname">bluetooth.msbt.</code><code class="sig-name descname">stop_advertising</code><span class="sig-paren">(</span><em class="sig-param">sock</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.msbt.stop_advertising" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_bt_widcomm.html" class="btn btn-neutral float-right" title="Windows widcomm stack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_bt_macos.html" class="btn btn-neutral float-left" title="Mac OS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2004 - 2019, Piotr Karulis &amp; contributors
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

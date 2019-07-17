@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Developer Interface &mdash; PyBluez master documentation</title>
+  <title>Application programming interface &mdash; PyBluez master documentation</title>
   
 
   
@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PyBluez common interface" href="api_common.html" />
+    <link rel="next" title="GNU/Linux" href="api_bt_bluez.html" />
     <link rel="prev" title="Installing PyBluez" href="user/install.html" /> 
 </head>
 
@@ -85,11 +85,18 @@
 <li class="toctree-l1"><a class="reference internal" href="user/install.html">Installing PyBluez</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer Interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_common.html">PyBluez common interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_linux.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_mac.html">Mac OS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_win.html">Windows</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application programming interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#package-bluetooth">Package: bluetooth</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modules">Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api_bt_bluez.html">GNU/Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_bt_macos.html">Mac OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_bt_ms.html">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_bt_widcomm.html">Windows widcomm stack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api_com.html">Helper Functions and Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -137,13 +144,15 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Developer Interface</li>
+      <li>Application programming interface</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+            
+              <a href="https://github.com/pybluez/pybluez/blob/master/docs/api.rst" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
@@ -156,35 +165,55 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="developer-interface">
-<span id="api"></span><h1>Developer Interface<a class="headerlink" href="#developer-interface" title="Permalink to this headline">¶</a></h1>
-<p>This section of the documentation covers all the interfaces of PyBluez. For most
-applications undertanding use of the PyBluez common library is sufficient.
+  <div class="section" id="application-programming-interface">
+<span id="api"></span><h1>Application programming interface<a class="headerlink" href="#application-programming-interface" title="Permalink to this headline">¶</a></h1>
+<p>This section of the documentation contains the PyBluez API (Application Programming Interface).
+For most applications understanding use of the PyBluez common library is sufficient.
 For applications where operating system dependent functionality is required please
 see the operating system specific pages.</p>
+<p>Documentation for the Python objects defined by the project is divided into package, module,
+and class.</p>
+<div class="section" id="package-bluetooth">
+<h2>Package: bluetooth<a class="headerlink" href="#package-bluetooth" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">bluetooth</span> <span class="k">as</span> <span class="nn">bt</span>
+</pre></div>
+</div>
+<span class="target" id="module-bluetooth"></span><div class="section" id="modules">
+<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<p>When the bluetooth package is imported the appropriate operating system module is automatically
+loaded in. This means application developers access the api classes and functions using the package
+reference rather than the specific module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">bluetooth</span> <span class="k">as</span> <span class="nn">bt</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">services</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">find_service</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">Should</span> <span class="n">work</span> <span class="n">on</span> <span class="nb">all</span> <span class="n">operating</span> <span class="n">systems</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The modules are documented by operating system here purely as reference.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="api_common.html">PyBluez common interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_common.html#functions">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_common.html#classes">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_bt_bluez.html">GNU/Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_bluez.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_bluez.html#functions">Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api_linux.html">Linux</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_linux.html#main-interface">Main Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_linux.html#classes">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_bt_macos.html">Mac OS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_macos.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_macos.html#functions">Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api_mac.html">Mac OS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_mac.html#main-interface">Main Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_mac.html#classes">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_bt_ms.html">Windows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_ms.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_ms.html#functions">Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api_win.html">Windows</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api_win.html#main-interface">Main Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api_win.html#classes">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_bt_widcomm.html">Windows widcomm stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_com.html">Helper Functions and Exceptions</a></li>
 </ul>
-</li>
-</ul>
+</div>
+</div>
 </div>
 </div>
 
@@ -196,7 +225,7 @@ see the operating system specific pages.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api_common.html" class="btn btn-neutral float-right" title="PyBluez common interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="api_bt_bluez.html" class="btn btn-neutral float-right" title="GNU/Linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="user/install.html" class="btn btn-neutral float-left" title="Installing PyBluez" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

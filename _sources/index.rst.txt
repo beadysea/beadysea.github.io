@@ -3,14 +3,15 @@ PyBluez
 
 |versions| |wheel| |build status| |license| 
 
-PyBluez is an api providing Python developers with easy access to system
-Bluetooth resources, allowing rapid Bluetooth application development in Python.
+Python extension module allowing access to system Bluetooth resources.
 
 User Guide
 ----------
 
 .. toctree::
 	:maxdepth: 2
+	:titlesonly:
+	:glob:
 
 	user/intro
 	user/install
