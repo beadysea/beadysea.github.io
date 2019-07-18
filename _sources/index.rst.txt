@@ -16,12 +16,23 @@ User Guide
 	user/intro
 	user/install
 
+Contributors Guide
+------------------
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+   :glob:
+
+   dev/contributing
+   dev/authors
 
 API Documentation
 -----------------
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
    api
 

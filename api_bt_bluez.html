@@ -25,7 +25,6 @@
         <script type="text/javascript" src="_static/underscore.js"></script>
         <script type="text/javascript" src="_static/doctools.js"></script>
         <script type="text/javascript" src="_static/language_data.js"></script>
-        <script type="text/javascript" src="_static/copybutton.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -87,17 +86,11 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="api.html">Application programming interface</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="api.html#package-bluetooth">Package: bluetooth</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="api.html#modules">Modules</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">GNU/Linux</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api_bt_macos.html">Mac OS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api_bt_ms.html">Windows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api_bt_widcomm.html">Windows widcomm stack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api_com.html">Helper Functions and Exceptions</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GNU/Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_macos.html">Mac OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_ms.html">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_bt_widcomm.html">Windows widcomm stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_com.html">Helper Functions and Exceptions</a></li>
 </ul>
 </li>
 </ul>
@@ -177,53 +170,72 @@
 <dt id="bluetooth.bluez.DeviceDiscoverer">
 <em class="property">class </em><code class="sig-prename descclassname">bluetooth.bluez.</code><code class="sig-name descname">DeviceDiscoverer</code><span class="sig-paren">(</span><em class="sig-param">device_id=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.bluez.DeviceDiscoverer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Skeleton class for finer control of the device discovery process.</p>
-<p>To implement asynchronous device discovery (e.g. if you want to do
-something <em>as soon as</em> a device is discovered), subclass
-DeviceDiscoverer and override device_discovered () and
-inquiry_complete ()</p>
+<p>To implement asynchronous device discovery (e.g. if you want to do something <em>as soon as</em> a
+device is discovered), subclass DeviceDiscoverer and override device_discovered() and
+inquiry_complete() methods.</p>
 <dl class="method">
 <dt id="bluetooth.bluez.DeviceDiscoverer.cancel_inquiry">
 <code class="sig-name descname">cancel_inquiry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.bluez.DeviceDiscoverer.cancel_inquiry" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call this method to cancel an inquiry in process.  inquiry_complete
-will still be called.</p>
+<dd><p>Cancel an inquiry in process.</p>
+<p>Call this method to cancel an inquiry in process. inquiry_complete will still be called.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="api_com.html#bluetooth.btcommon.BluetoothError" title="bluetooth.btcommon.BluetoothError"><strong>BluetoothError</strong></a> – </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="bluetooth.bluez.DeviceDiscoverer.device_discovered">
 <code class="sig-name descname">device_discovered</code><span class="sig-paren">(</span><em class="sig-param">address</em>, <em class="sig-param">device_class</em>, <em class="sig-param">rssi</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.bluez.DeviceDiscoverer.device_discovered" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called when a bluetooth device is discovered.</p>
-<p>address is the bluetooth address of the device</p>
-<dl class="simple">
-<dt>device_class is the Class of Device, as specified in [1]</dt><dd><p>passed in as a 3-byte string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – the bluetooth address of the device</p></li>
+<li><p><strong>device_class</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – the Class of Device, as specified in <a class="footnote-reference brackets" href="#id2" id="id1">1</a> passed in as a 3-byte string</p></li>
+<li><p><strong>rssi</strong> – the received signal strength indicator</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a>) – the user-friendly name of the device if lookup_names was set when the inquiry was
+started. otherwise None</p></li>
+</ul>
 </dd>
 </dl>
-<p>name is the user-friendly name of the device if lookup_names was
-set when the inquiry was started.  otherwise None</p>
+<p class="rubric">Notes</p>
 <p>This method exists to be overriden.</p>
-<p>[1] <a class="reference external" href="https://www.bluetooth.org/foundry/assignnumb/document/baseband">https://www.bluetooth.org/foundry/assignnumb/document/baseband</a></p>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://www.bluetooth.org/foundry/assignnumb/document/baseband">https://www.bluetooth.org/foundry/assignnumb/document/baseband</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="bluetooth.bluez.DeviceDiscoverer.find_devices">
 <code class="sig-name descname">find_devices</code><span class="sig-paren">(</span><em class="sig-param">lookup_names=True</em>, <em class="sig-param">duration=8</em>, <em class="sig-param">flush_cache=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.bluez.DeviceDiscoverer.find_devices" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>find_devices (lookup_names=True, service_name=None,</dt><dd><p>duration=8, flush_cache=True)</p>
-</dd>
-</dl>
+<dd><p>Find bluetooth devices.</p>
 <p>Call this method to initiate the device discovery process</p>
-<dl class="simple">
-<dt>lookup_names - set to True if you want to lookup the user-friendly</dt><dd><p>names for each device found.</p>
-</dd>
-<dt>service_name - set to the name of a service you’re looking for.</dt><dd><p>only devices with a service of this name will be
-returned in device_discovered () NOT YET IMPLEMENTED</p>
-</dd>
-<dt>ADVANCED PARAMETERS:  (don’t change these unless you know what</dt><dd><p>you’re doing)</p>
-</dd>
-<dt>duration - the number of 1.2 second units to spend searching for</dt><dd><p>bluetooth devices.  If lookup_names is True, then the
-inquiry process can take a lot longer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lookup_names</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – Set to True if you want to lookup the user-friendly names for each device found.</p></li>
+<li><p><strong>service_name</strong> – Set to the name of a service you’re looking for. Only devices with a service of this
+name will be returned in device_discovered () NOT YET IMPLEMENTED</p></li>
+<li><p><strong>duration</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – The number of 1.2 second units to spend searching for bluetooth devices.
+If lookup_names is True, then the inquiry process can take a lot longer.</p></li>
+<li><p><strong>flush_cache</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – return devices discovered in previous inquiries</p></li>
+</ul>
 </dd>
 </dl>
-<p>flush_cache - return devices discovered in previous inquiries</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t change <cite>duration</cite> or <cite>flush cache</cite> unless you know what you are doing.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference internal" href="api_com.html#bluetooth.btcommon.BluetoothError" title="bluetooth.btcommon.BluetoothError"><strong>BluetoothError</strong></a> – </p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -243,8 +255,9 @@ inquiry is started.</p>
 <dl class="method">
 <dt id="bluetooth.bluez.DeviceDiscoverer.process_event">
 <code class="sig-name descname">process_event</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.bluez.DeviceDiscoverer.process_event" title="Permalink to this definition">¶</a></dt>
-<dd><p>Waits for one event to happen, and proceses it.  The event will be
-either a device discovery, or an inquiry completion.</p>
+<dd><p>Process an hci event.</p>
+<p>Waits for one event to happen, and processes it. The event will be either a
+device discovery, or an inquiry completion.</p>
 </dd></dl>
 
 <dl class="method">
@@ -425,7 +438,7 @@ with sock.  You should typically call this right before you close sock.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2004 - 2019, Piotr Karulis &amp; contributors
+        &copy; Copyright 2004 - 2019, Albert Haung &amp; contributors
 
     </p>
   </div>
